@@ -1,1 +1,75 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #e6e7e6;
+}
 
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image {
+    flex: 0 0 calc(25%);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: #d1d3d2 3px solid;
+    border-right: #d1d3d2 3px solid;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.hover-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 15px;
+    text-transform: capitalize;
+    padding-top: 3rem;
+}
+.divider {
+    border: 1px solid white;
+    width: 5rem;
+    margin: 0;
+}
+
+.btn {
+    padding: 12px 1.2rem;
+    border: white 1px solid;
+    border-radius: 2rem;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.is-favorite {
+    background-color: red;
+}

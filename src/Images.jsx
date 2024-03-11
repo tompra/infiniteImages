@@ -1,13 +1,16 @@
 import SingleImage from './SingleImage';
 
-const Images = ({ images }) => {
-    console.log('images:', images);
+const Images = ({ images, handleAddFavorite }) => {
     return (
-        <div>
+        <section className='images-container'>
             {images.map((image) => (
-                <SingleImage key={image.id} image={image} />
+                <SingleImage
+                    key={image.id}
+                    image={image}
+                    handleAddFavorite={handleAddFavorite}
+                />
             ))}
-        </div>
+        </section>
     );
 };
 export default Images;
