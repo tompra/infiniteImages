@@ -6,6 +6,13 @@ html {
 }
 body {
     background-color: #e6e7e6;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+main {
+    padding: 1.4rem 0;
 }
 
 .images-container {
@@ -15,7 +22,7 @@ body {
 }
 
 .image {
-    flex: 0 0 calc(25%);
+    flex: 0 0 calc(100% - 25px);
     margin: 10px;
     display: flex;
     align-items: center;
@@ -43,33 +50,111 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     color: white;
-    gap: 15px;
     text-transform: capitalize;
-    padding-top: 3rem;
+    padding-bottom: 1rem;
 }
+p {
+    padding: 8px 0;
+}
+.author {
+    font-style: italic;
+    font-size: 5vw;
+}
+
+.photo-name {
+    font-weight: bolder;
+    font-size: 6vw;
+}
+
+.hover-container p.expanded {
+    white-space: normal;
+    padding: 0;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.hover-container p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 90%;
+}
+
 .divider {
     border: 1px solid white;
-    width: 5rem;
+    width: 4rem;
     margin: 0;
 }
 
 .btn {
-    padding: 12px 1.2rem;
+    padding: 2vw 4vw;
     border: white 1px solid;
     border-radius: 2rem;
     background-color: transparent;
     color: white;
     cursor: pointer;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 4vw;
 }
 
 .btn:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.is-favorite {
-    background-color: red;
+@media (min-width: 520px) and (max-width: 768px) {
+    .image {
+        flex: 0 0 calc(45% - 10px);
+    }
+    .hover-container {
+        padding-bottom: 0.8rem;
+    }
+    .btn {
+        font-size: 2vw;
+        padding: 1vw 2vw;
+    }
+    .author {
+        font-size: 2vw;
+    }
+
+    .photo-name {
+        font-size: 2.5vw;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .image {
+        flex: 0 0 calc(35% - 10px);
+    }
+    .hover-container {
+        padding-bottom: 0.5rem;
+    }
+
+    .btn {
+        font-size: 1.4vw;
+        padding: 0.5vw 1.5vw;
+    }
+    .author {
+        font-size: 1.3vw;
+    }
+
+    .photo-name {
+        font-size: 1.8vw;
+    }
+}
+@media (min-width: 1024px) {
+    .image {
+        flex: 0 0 calc(25% - 10px);
+    }
+
+    .btn {
+        font-size: 1vw;
+        padding: 0.5vw 1.2vw;
+    }
+    .author {
+        font-size: 1.3vw;
+    }
+
+    .photo-name {
+        font-size: 1.5vw;
+    }
 }
