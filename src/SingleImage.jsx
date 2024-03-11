@@ -12,8 +12,9 @@ const SingleImage = ({ image, handleAddFavorite }) => {
         setIsHover(false);
     };
 
+    console.log('images', image);
     const {
-        src: { original },
+        src: { original, small, medium, large },
         alt,
         photographer,
     } = image;
@@ -23,7 +24,12 @@ const SingleImage = ({ image, handleAddFavorite }) => {
             onMouseOver={handleMouseIn}
             onMouseOut={handleMouseOut}
         >
-            <img src={original} alt={alt || photographer} />
+            <img
+                src={original}
+                srcSet={`${small} 300w, ${medium} 600w, ${large} 900w`}
+                sizes='(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 10vw'
+                alt={alt || photographer}
+            />
             {isHover && (
                 <HoverImg image={image} handleAddFavorite={handleAddFavorite} />
             )}
