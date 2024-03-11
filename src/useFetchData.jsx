@@ -12,7 +12,6 @@ const useFetchData = () => {
     }, []);
 
     const fetchData = async () => {
-        console.log('page in fetch top', page);
         try {
             const response = await fetch(
                 `https://api.pexels.com/v1/curated?page=${page}&per_page=40`,
