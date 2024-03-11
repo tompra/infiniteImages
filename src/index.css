@@ -54,7 +54,7 @@ main {
     justify-content: flex-end;
     color: white;
     text-transform: capitalize;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
 }
 p {
     padding: 8px 0;

@@ -12,12 +12,15 @@ const SingleImage = ({ image, handleAddFavorite }) => {
         setIsHover(false);
     };
 
-    console.log('images', image);
     const {
         src: { original, small, medium, large },
         alt,
         photographer,
     } = image;
+    console.log('small', small);
+    console.log('medium', medium);
+    console.log('large', large);
+
     return (
         <div
             className='image'
@@ -27,7 +30,7 @@ const SingleImage = ({ image, handleAddFavorite }) => {
             <img
                 src={original}
                 srcSet={`${small} 300w, ${medium} 600w, ${large} 900w`}
-                sizes='(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 10vw'
+                sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 10vw'
                 alt={alt || photographer}
             />
             {isHover && (
