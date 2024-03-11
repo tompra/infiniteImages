@@ -37,6 +37,23 @@ const useFetchData = () => {
         }
     };
 
+    const handleScroll = () => {
+        console.log('handleScroll page', page);
+        if (
+            window.innerHeight + document.documentElement.scrollTop !==
+                document.documentElement.offsetHeight ||
+            isLoading
+        ) {
+            return;
+        }
+        fetchData();
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [page]);
+
     return { isLoading, isError, images };
 };
 
