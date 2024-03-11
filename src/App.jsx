@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import { createClient } from 'pexels';
+import { API_KEY } from '../secret.json';
+import Images from './Images';
 
-function App() {
-  const [count, setCount] = useState(0)
+const client = createClient(API_KEY);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App = () => {
+    const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
+    const [images, setImages] = useState(null);
 
-export default App
+    const fetchData = async () => {
+        try {
+            setIsLoading(true);
+            const response = await client.photos.curated({ per_page: 10 });
+            console.log(response.photos);
+            setImages(response.photos);
+        } catch (error) {
+            setIsError(true);
+            console.error('Error by fetching images:', error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+    return (
+        <main>
+            <h1>InfiniteImages</h1>
+            {isLoading ? (
+                <p>Loading...</p>
+            ) : isError ? (
+                <p>Error fetching images. Please try again.</p>
+            ) : (
+                <Images images={images} />
+            )}
+        </main>
+    );
+};
+export default App;
