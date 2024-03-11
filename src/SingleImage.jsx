@@ -13,7 +13,7 @@ const SingleImage = ({ image, handleAddFavorite }) => {
     };
 
     const {
-        src: { landscape },
+        src: { original },
         alt,
         photographer,
     } = image;
@@ -23,7 +23,7 @@ const SingleImage = ({ image, handleAddFavorite }) => {
             onMouseOver={handleMouseIn}
             onMouseOut={handleMouseOut}
         >
-            <img src={landscape} alt={alt || photographer} />
+            <img src={original} alt={alt || photographer} />
             {isHover && (
                 <HoverImg image={image} handleAddFavorite={handleAddFavorite} />
             )}
