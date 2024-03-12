@@ -4,20 +4,18 @@ const useInfiniteScroll = (fetchData) => {
     const observeRef = useRef(null);
 
     useEffect(() => {
-        console.log('infinite Scrolll EFFECT');
         const handleObserver = (entries) => {
             const target = entries[0];
             console.log('target', target);
             console.log('target.isIntersecting', target.isIntersecting);
             if (target.isIntersecting) {
-                console.log('is target intersecting', target.isIntersecting);
                 fetchData();
             }
         };
         const options = {
             root: null,
-            rootMargin: '500px',
-            threshold: 1,
+            rootMargin: '0px',
+            threshold: 0,
         };
 
         const observer = new IntersectionObserver(handleObserver, options);
