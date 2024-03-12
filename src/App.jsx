@@ -1,4 +1,4 @@
-import Images from './components/Images';
+import Images from './components/ImagesComp/Images';
 import useFetchData from './hooks/useFetchData';
 import useInfiniteScroll from './hooks/useInfiniteScroll';
 import { useEffect } from 'react';
