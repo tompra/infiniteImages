@@ -5,13 +5,14 @@ import { useEffect } from 'react';
 
 const App = () => {
     const { isLoading, isError, images, fetchData } = useFetchData();
-    const { observeRef } = useInfiniteScroll();
+    const { observeRef } = useInfiniteScroll(fetchData);
 
     useEffect(() => {
         console.log('fetch in UseEffect');
         fetchData();
     }, []);
 
+    console.log('observerREF IN APP', observeRef);
     return (
         <main>
             {isLoading ? (
