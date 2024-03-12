@@ -46,7 +46,10 @@ const LazyImg = ({ image }) => {
                     alt={alt || photographer}
                 />
             ) : (
-                <div ref={imageRef} style={{ height: '100px' }}></div>
+                <img
+                    ref={imageRef}
+                    src='https://placehold.co/100x150/000000/FFF?text=Placerholder'
+                />
             )}
         </>
     );
