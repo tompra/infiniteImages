@@ -29,9 +29,9 @@ const Images = ({ images }) => {
     };
     return (
         <section className='images-container'>
-            {images.map((image) => (
+            {images.map((image, index) => (
                 <SingleImage
-                    key={image.id}
+                    key={`${image.id}-${index}`}
                     image={image}
                     handleAddFavorite={handleAddFavorite}
                 />
