@@ -8,7 +8,6 @@ const useFetchData = () => {
     const [page, setPage] = useState(1);
 
     const fetchData = async () => {
-        setIsLoading(true);
         try {
             const response = await fetch(
                 `https://api.pexels.com/v1/curated?page=${page}&per_page=40`,
