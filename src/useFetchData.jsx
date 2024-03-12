@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { API_KEY } from '../secret.json';
 
 const useFetchData = () => {
@@ -8,6 +8,7 @@ const useFetchData = () => {
     const [page, setPage] = useState(1);
 
     const fetchData = async () => {
+        setIsLoading(true);
         try {
             const response = await fetch(
                 `https://api.pexels.com/v1/curated?page=${page}&per_page=40`,
@@ -31,10 +32,6 @@ const useFetchData = () => {
             setIsLoading(false);
         }
     };
-
-    useEffect(() => {
-        fetchData();
-    }, []);
 
     return { isLoading, isError, images, fetchData };
 };
