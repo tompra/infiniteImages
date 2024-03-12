@@ -9,7 +9,31 @@ const LazyImg = ({ image }) => {
     const imageRef = useRef(null);
 
     useEffect(() => {
-        console.log('LAZY IMAGES EFFECT');
+        const handleObserver = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setInView(true);
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver(handleObserver, options);
+
+        if (imageRef.current) {
+            observer.observe(imageRef.current);
+        }
+
+        return () => {
+            if (imageRef.current) {
+                observer.unobserve(imageRef.current);
+            }
+        };
     }, []);
 
     return (
