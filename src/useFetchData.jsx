@@ -7,10 +7,6 @@ const useFetchData = () => {
     const [images, setImages] = useState([]);
     const [page, setPage] = useState(1);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
-
     const fetchData = async () => {
         try {
             const response = await fetch(
@@ -36,24 +32,11 @@ const useFetchData = () => {
         }
     };
 
-    const handleScroll = () => {
-        console.log('handleScroll page', page);
-        if (
-            window.innerHeight + document.documentElement.scrollTop !==
-                document.documentElement.offsetHeight ||
-            isLoading
-        ) {
-            return;
-        }
-        fetchData();
-    };
-
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [page]);
+        fetchData();
+    }, []);
 
-    return { isLoading, isError, images };
+    return { isLoading, isError, images, fetchData };
 };
 
 export default useFetchData;
