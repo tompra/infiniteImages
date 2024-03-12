@@ -8,11 +8,9 @@ const App = () => {
     const { observeRef } = useInfiniteScroll(fetchData);
 
     useEffect(() => {
-        console.log('fetch in UseEffect');
         fetchData();
     }, []);
 
-    console.log('observerREF IN APP', observeRef);
     return (
         <main>
             {isLoading ? (
