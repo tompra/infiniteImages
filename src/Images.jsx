@@ -7,6 +7,10 @@ const Images = ({ images }) => {
     );
     const [listFavorite, setListFavorite] = useState(defaultFavList);
 
+    const setLocalStorage = (favorites) => {
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    };
+
     const handleAddFavorite = (id) => {
         const addFavorite = images.find((image) => image.id === id);
         const isAlreadyFavorite = listFavorite.some(
@@ -18,12 +22,12 @@ const Images = ({ images }) => {
                 (fav) => fav.id !== addFavorite.id
             );
             setListFavorite(newFav);
-            localStorage.setItem('favorites', JSON.stringify(newFav));
+            setLocalStorage(newFav);
             alert('Remove favorite image');
         } else {
             const newFav = [...listFavorite, addFavorite];
             setListFavorite(newFav);
-            localStorage.setItem('favorites', JSON.stringify(newFav));
+            setLocalStorage(newFav);
             alert('Add favorite image');
         }
     };
