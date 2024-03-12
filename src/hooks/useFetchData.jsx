@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { API_KEY } from '../secret.json';
+import { API_KEY } from '../../secret.json';
 
 const useFetchData = () => {
     const [isLoading, setIsLoading] = useState(true);
