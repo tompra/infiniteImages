@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const HoverImg = ({ image, handleAddFavorite }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -29,3 +30,8 @@ const HoverImg = ({ image, handleAddFavorite }) => {
     );
 };
 export default HoverImg;
+
+HoverImg.propTypes = {
+    image: PropTypes.object,
+    handleAddFavorite: PropTypes.function,
+};

@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+
 const LazyImg = ({ image }) => {
     const {
         src: { original, small, medium, large },
@@ -55,3 +57,6 @@ const LazyImg = ({ image }) => {
     );
 };
 export default LazyImg;
+LazyImg.propTypes = {
+    image: PropTypes.object,
+};

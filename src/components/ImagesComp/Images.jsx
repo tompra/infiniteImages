@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import SingleImage from '../SingleImgComp/SingleImage';
 
 const Images = ({ images }) => {
@@ -12,27 +13,29 @@ const Images = ({ images }) => {
     };
 
     const handleAddFavorite = (id) => {
-        const addFavorite = images.find((image) => image.id === id);
+        const imageClicked = images.find((image) => image.id === id);
+
         const isAlreadyFavorite = listFavorite.some(
-            (fav) => fav.id === addFavorite.id
+            (fav) => fav.id === imageClicked.id
         );
 
         if (isAlreadyFavorite) {
-            const newFav = listFavorite.filter(
-                (fav) => fav.id !== addFavorite.id
+            const removeFav = listFavorite.filter(
+                (fav) => fav.id !== imageClicked.id
             );
-            setListFavorite(newFav);
-            setLocalStorage(newFav);
+            setListFavorite(removeFav);
+            setLocalStorage(removeFav);
             alert('Remove favorite image');
         } else {
-            const newFav = [...listFavorite, addFavorite];
-            setListFavorite(newFav);
-            setLocalStorage(newFav);
+            const addFav = [...listFavorite, { ...imageClicked, liked: true }];
+            setListFavorite(addFav);
+            setLocalStorage(addFav);
             alert('Add favorite image');
         }
     };
+
     return (
-        <section className='images-container'>
+        <section className='images-container' data-testid='images-container'>
             {images.map((image, index) => (
                 <SingleImage
                     key={`${image.id}-${index}`}
@@ -44,3 +47,7 @@ const Images = ({ images }) => {
     );
 };
 export default Images;
+Images.propTypes = {
+    images: PropTypes.array,
+    handleAddFavorite: PropTypes.func,
+};

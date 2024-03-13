@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import HoverImg from '../HoverComp/HoverImg';
 import LazyImg from '../LazyImgComp/LazyImg';
 
@@ -27,3 +28,7 @@ const SingleImage = ({ image, handleAddFavorite }) => {
     );
 };
 export default SingleImage;
+SingleImage.propTypes = {
+    image: PropTypes.object,
+    handleAddFavorite: PropTypes.func,
+};
