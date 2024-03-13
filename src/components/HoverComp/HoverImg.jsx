@@ -33,5 +33,5 @@ export default HoverImg;
 
 HoverImg.propTypes = {
     image: PropTypes.object,
-    handleAddFavorite: PropTypes.function,
+    handleAddFavorite: PropTypes.func,
 };
