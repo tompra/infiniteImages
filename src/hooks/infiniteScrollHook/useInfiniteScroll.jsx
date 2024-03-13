@@ -6,8 +6,6 @@ const useInfiniteScroll = (fetchData) => {
     useEffect(() => {
         const handleObserver = (entries) => {
             const target = entries[0];
-            console.log('target', target);
-            console.log('target.isIntersecting', target.isIntersecting);
             if (target.isIntersecting) {
                 fetchData();
             }
@@ -21,14 +19,12 @@ const useInfiniteScroll = (fetchData) => {
         const observer = new IntersectionObserver(handleObserver, options);
 
         if (observeRef.current) {
-            console.log('observing current ref');
             observer.observe(observeRef.current);
         }
 
         return () => {
             if (observeRef.current) {
                 observer.unobserve(observeRef.current);
-                console.log('unobserving current ref');
             }
         };
     }, [observeRef, fetchData]);

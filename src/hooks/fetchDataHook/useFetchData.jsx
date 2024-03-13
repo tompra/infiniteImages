@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import { API_KEY } from '../../secret.json';
+import { API_KEY } from '../../../secret.json';
 
 const useFetchData = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
     const [images, setImages] = useState([]);
     const [page, setPage] = useState(1);
+
+    // TODO:
+    // improve fetching data function
 
     const fetchData = async () => {
         try {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SingleImage from '../SingleImageComp/SingleImage';
+import SingleImage from '../SingleImgComp/SingleImage';
 
 const Images = ({ images }) => {
     const defaultFavList = JSON.parse(

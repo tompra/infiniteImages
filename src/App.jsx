@@ -1,6 +1,6 @@
 import Images from './components/ImagesComp/Images';
-import useFetchData from './hooks/useFetchData';
-import useInfiniteScroll from './hooks/useInfiniteScroll';
+import useFetchData from './hooks/fetchDataHook/useFetchData';
+import useInfiniteScroll from './hooks/infiniteScrollHook/useInfiniteScroll';
 import { useEffect } from 'react';
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
 
     return (
         <main>
+            <h1>Hello World</h1>
             {isLoading ? (
                 <p>Loading...</p>
             ) : isError ? (

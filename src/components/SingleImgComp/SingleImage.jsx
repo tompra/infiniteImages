@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import HoverImg from '../HoverImgComp/HoverImg';
+import HoverImg from '../HoverComp/HoverImg';
 import LazyImg from '../LazyImgComp/LazyImg';
 
 const SingleImage = ({ image, handleAddFavorite }) => {
