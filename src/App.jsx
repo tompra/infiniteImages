@@ -14,14 +14,16 @@ const App = () => {
     return (
         <main>
             {isLoading ? (
-                <p>Loading...</p>
+                <p data-testid='loading'>Loading...</p>
             ) : isError ? (
-                <p>Error fetching images. Please try again.</p>
+                <p data-testid='error-message'>
+                    Error fetching images. Please try again.
+                </p>
             ) : (
-                <>
+                <div data-testid='images-container'>
                     <Images images={images} />
                     <div ref={observeRef}></div>
-                </>
+                </div>
             )}
         </main>
     );
