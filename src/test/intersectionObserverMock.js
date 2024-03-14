@@ -1,5 +1,9 @@
 import { vi } from 'vitest';
-window.IntersectionObserver = vi.fn(() => ({
+const IntersectionObserverMock = vi.fn(() => ({
+    disconnect: vi.fn(),
     observe: vi.fn(),
+    takeRecords: vi.fn(),
     unobserve: vi.fn(),
 }));
+vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
+window.IntersectionObserver;
