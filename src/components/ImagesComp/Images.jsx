@@ -20,27 +20,30 @@ const Images = ({ images }) => {
         );
 
         if (isAlreadyFavorite) {
-            const removeFav = listFavorite.filter(
-                (fav) => fav.id !== imageClicked.id
+            const updatedFavorites = listFavorite.filter(
+                (fav) => fav.id !== id
             );
-            setListFavorite(removeFav);
-            setLocalStorage(removeFav);
+            setListFavorite(updatedFavorites);
+            setLocalStorage(updatedFavorites);
             alert('Remove favorite image');
         } else {
-            const addFav = [...listFavorite, { ...imageClicked, liked: true }];
-            setListFavorite(addFav);
-            setLocalStorage(addFav);
+            const updatedFavorites = [
+                ...listFavorite,
+                { ...imageClicked, liked: true },
+            ];
+            setListFavorite(updatedFavorites);
+            setLocalStorage(updatedFavorites);
             alert('Add favorite image');
         }
     };
-
     return (
-        <section className='images-container' data-testid='images-container'>
+        <section className='images-container'>
             {images.map((image, index) => (
                 <SingleImage
                     key={`${image.id}-${index}`}
                     image={image}
                     handleAddFavorite={handleAddFavorite}
+                    listFavorite={listFavorite}
                 />
             ))}
         </section>
