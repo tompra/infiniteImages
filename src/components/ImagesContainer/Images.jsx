@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import SingleImage from '../SingleImgComp/SingleImage';
+import SingleImage from '../SingleImg/SingleImage';
 
 const Images = ({ images }) => {
     const defaultFavList = JSON.parse(

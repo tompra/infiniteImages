@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import HoverImg from '../HoverComp/HoverImg';
-import LazyImg from '../LazyImgComp/LazyImg';
+import HoverImg from '../Hover/HoverImg';
+import LazyImg from '../LazyImg/LazyImg';
 
 const SingleImage = ({ image, handleAddFavorite, listFavorite }) => {
     const [isHover, setIsHover] = useState(false);

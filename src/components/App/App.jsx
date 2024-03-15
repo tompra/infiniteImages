@@ -1,6 +1,6 @@
-import Images from './components/ImagesComp/Images';
-import useFetchData from './hooks/fetchDataHook/useFetchData';
-import useInfiniteScroll from './hooks/infiniteScrollHook/useInfiniteScroll';
+import Images from '../ImagesContainer/Images';
+import useFetchData from '../../hooks/fetchDataHook/useFetchData';
+import useInfiniteScroll from '../../hooks/infiniteScrollHook/useInfiniteScroll';
 import { useEffect } from 'react';
 
 const App = () => {
