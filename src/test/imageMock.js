@@ -22,7 +22,7 @@ export const imageMock = {
         tiny: 'https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280',
     },
     liked: false,
-    alt: 'Brown Rocks During Golden Hour',
+    alt: 'A Vase Of Yellow Flowers Sits On A Table Next To A Mirror',
 };
 
 export const placeholderMock = {
