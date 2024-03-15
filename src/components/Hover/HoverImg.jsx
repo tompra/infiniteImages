@@ -7,6 +7,7 @@ const HoverImg = ({ image, handleAddFavorite, listFavorite }) => {
     const isFavorite = listFavorite.some((fav) => fav.id === id);
 
     const toggleSeeMore = () => {
+        if (alt.length < 30) return;
         setIsExpanded(!isExpanded);
     };
 
