@@ -7,9 +7,6 @@ const useFetchData = () => {
     const [images, setImages] = useState([]);
     const [page, setPage] = useState(1);
 
-    // TODO:
-    // improve fetching data function
-
     const fetchData = async () => {
         try {
             const response = await fetch(
