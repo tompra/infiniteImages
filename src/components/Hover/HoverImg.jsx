@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const HoverImg = ({ image, handleAddFavorite, listFavorite }) => {
+const HoverImg = ({ image, handleAddFavorite, isFavorite }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const { id, alt, photographer } = image;
-    const isFavorite = listFavorite.some((fav) => fav.id === id);
 
     const toggleSeeMore = () => {
         if (alt.length < 30) return;
@@ -41,5 +40,5 @@ export default HoverImg;
 HoverImg.propTypes = {
     image: PropTypes.object,
     handleAddFavorite: PropTypes.func,
-    listFavorite: PropTypes.array,
+    isFavorite: PropTypes.bool,
 };
