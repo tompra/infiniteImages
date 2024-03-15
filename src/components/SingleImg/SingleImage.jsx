@@ -15,9 +15,11 @@ const SingleImage = ({ image, handleAddFavorite, listFavorite }) => {
         setIsHover(false);
     };
 
+    const isFavorite = listFavorite.some((fav) => fav.id === image.id);
+
     return (
         <div
-            className='image'
+            className={`${isFavorite ? 'favorite image' : 'image'}`}
             onMouseOver={handleMouseIn}
             onMouseOut={handleMouseOut}
             data-testid='single-image'
@@ -27,7 +29,7 @@ const SingleImage = ({ image, handleAddFavorite, listFavorite }) => {
                 <HoverImg
                     image={image}
                     handleAddFavorite={handleAddFavorite}
-                    listFavorite={listFavorite}
+                    isFavorite={isFavorite}
                 />
             )}
         </div>
