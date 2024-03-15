@@ -4,12 +4,13 @@ import LazyImg from './LazyImg';
 import { imageMock, placeholderMock } from '../../test/imageMock';
 
 describe('Lazy img component', () => {
+    const setInView = vi.fn();
     test('LazyImg component renders without errors', () => {
         render(
             <LazyImg
                 image={placeholderMock}
                 isView={false}
-                setInView={vi.fn()}
+                setInView={setInView}
             />
         );
     });
@@ -18,12 +19,14 @@ describe('Lazy img component', () => {
             <LazyImg
                 image={placeholderMock}
                 isView={false}
-                setInView={vi.fn()}
+                setInView={setInView}
             />
         );
         const placeholder = screen.getByTestId('placeholder');
         expect(placeholder).toBeInTheDocument();
+
         rerender(<LazyImg image={imageMock} isView={true} />);
+
         const imageApi = screen.getByTestId('image');
         expect(imageApi).toBeInTheDocument();
     });
