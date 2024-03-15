@@ -25,7 +25,6 @@ const Images = ({ images }) => {
             );
             setListFavorite(updatedFavorites);
             setLocalStorage(updatedFavorites);
-            alert('Remove favorite image');
         } else {
             const updatedFavorites = [
                 ...listFavorite,
@@ -33,7 +32,6 @@ const Images = ({ images }) => {
             ];
             setListFavorite(updatedFavorites);
             setLocalStorage(updatedFavorites);
-            alert('Add favorite image');
         }
     };
     return (
