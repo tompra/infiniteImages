@@ -75,10 +75,11 @@ p {
     margin-bottom: 5px;
     text-align: center;
 }
+
 .hover-container p {
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    text-align: center;
+    white-space: normal;
     max-width: 90%;
 }
 
