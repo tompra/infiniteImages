@@ -33,6 +33,11 @@ main {
     border-right: #d1d3d2 3px solid;
     border-radius: 0.5rem;
     max-height: 300px;
+    transition: border 0.3s ease;
+}
+.favorite {
+    border-bottom: rgb(195, 58, 58) 3px solid;
+    border-right: rgb(195, 58, 58) 3px solid;
 }
 
 .image img {
@@ -67,6 +72,7 @@ p {
 .photo-name {
     font-weight: bolder;
     font-size: 6vw;
+    cursor: pointer;
 }
 
 .hover-container p.expanded {
@@ -74,6 +80,7 @@ p {
     padding: 0;
     margin-bottom: 5px;
     text-align: center;
+    max-height: none;
 }
 
 .hover-container p {
@@ -81,6 +88,9 @@ p {
     text-align: center;
     white-space: normal;
     max-width: 90%;
+    max-height: none;
+    max-height: 3vw;
+    transition: max-height 1s ease;
 }
 
 .divider {
@@ -98,10 +108,16 @@ p {
     cursor: pointer;
     font-weight: bold;
     font-size: 4vw;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.favorite {
+    border-bottom: rgb(195, 58, 58) 3px solid;
+    border-right: rgb(195, 58, 58) 3px solid;
 }
 
 @media (min-width: 520px) and (max-width: 768px) {
