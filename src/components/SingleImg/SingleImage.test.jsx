@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { describe, test, vi, expect } from 'vitest';
 import { imageMock } from '../../test/imageMock';
 import SingleImage from './SingleImage';
@@ -59,5 +59,34 @@ describe('Single image component test', () => {
         const imageApi = screen.getByTestId('placeholder');
 
         expect(imageApi).toBeInTheDocument();
+    });
+    test('should render with class favorite when the images is favorite', () => {
+        const listFavorite = [imageMock];
+        render(
+            <SingleImage
+                image={imageMock}
+                handleAddFavorite={handleAddFavorite}
+                listFavorite={listFavorite}
+            />
+        );
+
+        const isFavorite = listFavorite.some((fav) => fav.id === imageMock.id);
+        const singleImage = screen.getByTestId('single-image');
+        expect(isFavorite).toBe(true);
+        expect(singleImage).toHaveClass('favorite image');
+
+        const updateListFavorite = [];
+
+        act(() => {
+            render(
+                <SingleImage
+                    image={imageMock}
+                    handleAddFavorite={handleAddFavorite}
+                    listFavorite={updateListFavorite}
+                />
+            );
+        });
+
+        expect(singleImage).toHaveClass('image');
     });
 });
