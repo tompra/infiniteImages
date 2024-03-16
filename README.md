@@ -15,10 +15,9 @@ Built in React, this app uses Intersection Observer API for infinite scroll and 
 7. Inside this file, copy this: 
     ```json
     {
-        "API_KEY": "YOUR_API_KEY"
+        "API_KEY": "YOUR_API_KEY" (replace YOUR_API_KEY with your actual API key)
     }
     ```
-    (replace YOUR_API_KEY with your actual API key)
 8. Run the project: `npm run dev`
 9. Run tests: `npm run test`
 
