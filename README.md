@@ -12,7 +12,7 @@ Built in React, this app uses Intersection Observer API for infinite scroll and 
 4. Install dependencies: `npm install`
 5. Create your own API_KEY from the <a href="https://www.pexels.com/api/">Pexels API</a>.
 6. After successfully creating your API_KEY, in the root of the project directory, create a `secrets.json` file.
-7. Inside this file, copy this: 
+7. Inside this file, copy this:
     ```json
     {
         "API_KEY": "YOUR_API_KEY" (replace YOUR_API_KEY with your actual API key)
@@ -33,16 +33,16 @@ Built in React, this app uses Intersection Observer API for infinite scroll and 
 
 ### DevDependencies
 
-| DevDependency               | Description                                       |
-| --------------------------- | ------------------------------------------------- |
-| @testing-library/jest-dom   | Custom Jest matchers to test the state of the DOM |
-| @testing-library/react      | Simple and complete React DOM testing utilities   |
-| @testing-library/user-event | Simulate user events for testing React components |
-| @vitejs/plugin-react        | Official Vite plugin for React                    |
-| eslint                      | JavaScript and TypeScript linter and formatter    |
-| eslint-plugin-react         | ESLint plugin for React-specific linting rules    |
-| eslint-plugin-react-hooks   | ESLint plugin for React Hooks specific linting rules |
-| eslint-plugin-react-refresh | ESLint plugin for React Refresh specific linting rules |
-| jsdom                       | A JavaScript implementation of the WHATWG DOM and HTML standards |
+| DevDependency               | Description                                                             |
+| --------------------------- | ----------------------------------------------------------------------- |
+| @testing-library/jest-dom   | Custom Jest matchers to test the state of the DOM                       |
+| @testing-library/react      | Simple and complete React DOM testing utilities                         |
+| @testing-library/user-event | Simulate user events for testing React components                       |
+| @vitejs/plugin-react        | Official Vite plugin for React                                          |
+| eslint                      | JavaScript and TypeScript linter and formatter                          |
+| eslint-plugin-react         | ESLint plugin for React-specific linting rules                          |
+| eslint-plugin-react-hooks   | ESLint plugin for React Hooks specific linting rules                    |
+| eslint-plugin-react-refresh | ESLint plugin for React Refresh specific linting rules                  |
+| jsdom                       | A JavaScript implementation of the WHATWG DOM and HTML standards        |
 | vite                        | Fast, opinionated web dev server with a modern ES module build pipeline |
-| vitest                      | A lightweight testing library for React applications |
+| vitest                      | A lightweight testing library for React applications                    |
