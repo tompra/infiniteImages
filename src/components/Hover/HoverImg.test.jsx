@@ -17,7 +17,7 @@ describe('HoverImg component', () => {
             <HoverImg
                 image={imageMock}
                 handleAddFavorite={handleAddFavorite}
-                listFavorite={listFavorite}
+                isFavorite={false}
             />
         );
     });
@@ -26,18 +26,18 @@ describe('HoverImg component', () => {
             <HoverImg
                 image={imageMock}
                 handleAddFavorite={handleAddFavorite}
-                listFavorite={listFavorite}
+                isFavorite={false}
             />
         );
         const hoverImg = screen.getByTestId('hover-image');
         expect(hoverImg).toBeInTheDocument();
     });
-    test('when clicked on the text it triggers changes the value to show more', () => {
+    test('when clicked on the photo name text it triggers changes the value to show more', () => {
         render(
             <HoverImg
                 image={imageMock}
                 handleAddFavorite={handleAddFavorite}
-                listFavorite={listFavorite}
+                isFavorite={false}
             />
         );
 
@@ -51,7 +51,7 @@ describe('HoverImg component', () => {
             <HoverImg
                 image={imageMock}
                 handleAddFavorite={handleAddFavorite}
-                listFavorite={listFavorite}
+                isFavorite={false}
             />
         );
         const favoriteBtn = screen.getByTestId('favorite-btn');
@@ -81,7 +81,7 @@ describe('HoverImg component', () => {
             <HoverImg
                 image={imageMock}
                 handleAddFavorite={handleAddFavorite}
-                listFavorite={updatedFavorites}
+                isFavorite={true}
             />
         );
 
