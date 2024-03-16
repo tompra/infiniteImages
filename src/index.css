@@ -22,7 +22,7 @@ main {
 }
 
 .image {
-    flex: 0 0 calc(100% - 25px);
+    flex: 0 0 calc(100% - 15px);
     position: relative;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@ main {
     border-bottom: #d1d3d2 3px solid;
     border-right: #d1d3d2 3px solid;
     border-radius: 0.5rem;
-    max-height: 300px;
+    height: 290px;
     transition: border 0.3s ease;
 }
 .favorite {
@@ -42,7 +42,7 @@ main {
 
 .image img {
     width: 100%;
-    height: 20vw;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -89,7 +89,6 @@ p {
     white-space: normal;
     max-width: 90%;
     max-height: none;
-    max-height: 3vw;
     transition: max-height 1s ease;
 }
 
@@ -127,6 +126,9 @@ p {
     .hover-container {
         padding-bottom: 0.8rem;
     }
+    .hover-container p {
+        max-height: none;
+    }
     .btn {
         font-size: 2vw;
         padding: 1vw 2vw;
@@ -161,7 +163,7 @@ p {
 }
 @media (min-width: 1024px) {
     .image {
-        flex: 0 0 calc(25% - 10px);
+        flex: 0 0 calc(25% - 18px);
     }
 
     .btn {
