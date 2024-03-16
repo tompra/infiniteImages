@@ -3,6 +3,7 @@ import { describe, test, expect, vi } from 'vitest';
 import useInfiniteScroll from './useInfiniteScroll';
 import { IntersectionObserverMock } from '../../test/intersectionObserverMock';
 import { getObserverOf, intersect } from '../../test/intersectionObserverMock';
+import PropTypes from 'prop-types';
 
 window.IntersectionObserver = IntersectionObserverMock;
 
@@ -36,3 +37,7 @@ describe('useInfiniteScroll hook test', () => {
         expect(fetchData).toHaveBeenCalledTimes(1);
     });
 });
+
+Observe.propTypes = {
+    fetchData: PropTypes.func,
+};
