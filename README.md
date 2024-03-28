@@ -7,6 +7,7 @@ Built in React, this app uses Intersection Observer API for infinite scroll and 
 ## How to get the project running
 
 ### Git clone
+
 1. Create a directory on your local computer: `mkdir <name_your_directory>`
 2. Clone the GitHub repository using the command: `git clone <repository-url>`
 3. Navigate to the project directory: `cd <project-directory>`
@@ -23,13 +24,14 @@ Built in React, this app uses Intersection Observer API for infinite scroll and 
 9. Run tests: `npm run test`
 
 ### Zip file
+
 1. Download the zip file
 2. Decompress the project
 3. Navigate to the project directory: `cd <project-directory>`
 4. Install dependencies: `npm install`
 5. Create your own API_KEY from the <a href="https://www.pexels.com/api/">Pexels API</a>.
 6. After successfully creating your API_KEY, in the root of the project directory, create a `secrets.json` file.
-7. Inside this file, copy this: 
+7. Inside this file, copy this:
     ```json
     {
         "API_KEY": "YOUR_API_KEY" (replace YOUR_API_KEY with your actual API key)
@@ -37,7 +39,6 @@ Built in React, this app uses Intersection Observer API for infinite scroll and 
     ```
 8. Run the project: `npm run dev`
 9. Run tests: `npm run test`
-
 
 ## Technologies
 
