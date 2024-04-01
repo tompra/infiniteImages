@@ -20,7 +20,7 @@ describe('App component test before fetching data', () => {
         });
 
         render(<App />);
-        expect(screen.getByText('Loading...')).toBeInTheDocument();
+        expect(screen.getByTestId('Loading...')).toBeInTheDocument();
     });
     test('error text should appear', () => {
         spyFetch.mockReturnValue({
